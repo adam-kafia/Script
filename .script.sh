@@ -65,5 +65,3 @@ if [[ $1 = "-mtop" ]]; then
 fi
 }
 menu $1
-
-qssù
