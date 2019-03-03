@@ -1,31 +1,16 @@
 #menu1 
--ltop()
-{
-	top
-}
--lps()
-{
-	ps -aux
-}
--user()
-{
-	ps -u $user
-}
--mtop()
-{
-	top -b -o +%MEM | head -n 12
-}
+source functions.sh
 menu(){
 choix=0
 if [[ $# -eq 0 ]] ; then
 while (( $choix !='6' ))
 do
 	clear
-	echo " 1 -	pour lancer la commande top: "
-	echo " 2 -	pour lancer la commande ps -aux: "
-	echo " 3 -	pour uniquement les processus lancé par l'utilisateur: "
-	echo " 4 -  pour afficher uniquement les 5 tops processus"
-	echo " 5 -  pour afficher le help: "
+	echo " 1 -	pour lancer la commande top"
+	echo " 2 -	pour lancer la commande ps -aux"
+	echo " 3 -	pour uniquement les processus lancé par l'utilisateur"
+	echo " 4 -    pour afficher uniquement les 5 tops processus"
+	echo " 5 -    pour afficher le help"
 	echo " 6 -	pour Quitter "
 	echo "votre choix:"
 	read choix
@@ -33,17 +18,21 @@ do
 
 		1) -ltop
 			read
+			clear
 			;;
 		2) -lps
 			read
-			;;
+			clear
+			;;	
 		3) -user
 			read
+			clear
 			;;
 		4) -mtop
 			read
+			clear
 			;;
-		5) 
+		5) clear
 			;;
 		6)
 			break
@@ -65,3 +54,4 @@ if [[ $1 = "-mtop" ]]; then
 fi
 }
 menu $1
+
